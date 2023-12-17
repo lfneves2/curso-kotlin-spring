@@ -14,5 +14,4 @@ interface TopicoRepository: JpaRepository<Topico, Long> {
     @Query("SELECT new br.com.alura.forum.dto.TopicoCategoriaDto(c.categoria, count(t)) FROM Topico t JOIN t.curso c GROUP BY c.categoria")
     fun relatorio(): List<TopicoCategoriaDto>
 
-    fun findByCategoriaGroupBy
 }
