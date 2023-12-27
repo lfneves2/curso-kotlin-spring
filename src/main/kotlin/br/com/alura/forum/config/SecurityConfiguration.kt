@@ -19,7 +19,11 @@ class SecurityConfiguration() {
 
         http
             .authorizeHttpRequests {
-               authorizeHttpRequests -> authorizeHttpRequests.anyRequest().authenticated()
+               authorizeHttpRequests -> authorizeHttpRequests.
+                                        requestMatchers("/topicos").
+                                        hasAnyAuthority("LEITURA_ESCRITA").
+                                        anyRequest().
+                                        authenticated()
             }.sessionManagement{
                sessionManagement -> sessionManagement.sessionCreationPolicy(SessionCreationPolicy.STATELESS)
             }.formLogin{
