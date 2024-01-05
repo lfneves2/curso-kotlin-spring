@@ -11,3 +11,6 @@ spring:
       hibernate:
         show_sql: true
         format_sql: true
+
+jwt:
+  secret: ba570e06-8b32-46aa-a1ad-4ae069d7b4c7
